@@ -78,11 +78,10 @@ func (u *User) Update() error {
 
 	stmt := `update users set
 		email = $1,
-		first_name = $2,
-		last_name = $3,
-		user_active = $4,
-		updated_at = $5
-		where id = $6
+		name = $2,
+		is_active = $3,
+		updated_at = $4
+		where id = $5
 	`
 
 	_, err := db.ExecContext(ctx, stmt,
