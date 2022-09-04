@@ -21,7 +21,7 @@ services:
   postgres:
     image: 'postgres:14.0'
     ports:
-      - "5432:5432"
+      - "5433:5432" #using 5433 on my machine because i do have my own postgre on host machine
     restart: 'no'
     deploy:
       mode: replicated
