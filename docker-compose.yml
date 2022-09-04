@@ -13,15 +13,13 @@ services:
       mode: replicated
       replicas: 1
     environment:
-      - DSN: "host=potgres port=5432 user=postgres password=password dbname=users sslmode=disable timzone=UTC connect_timeout=5"
+      DSN: "host=potgres port=5432 user=postgres password=password dbname=users sslmode=disable timzone=UTC connect_timeout=5"
     
-
-
 
   postgres:
     image: 'postgres:14.0'
     ports:
-      - "5433:5432" #using 5433 on my machine because i do have my own postgre on host machine
+      - "5532:5432" #using 5432 and 5433 on my machine because i do have my own postgre on host machine
     restart: 'no'
     deploy:
       mode: replicated
